@@ -38,7 +38,7 @@ services:
       - 10912:10912
     environment:
       TZ: Asia/Shanghai
-      NAMESRV_ADDR: "namesrv1:9876"
+      NAMESRV_ADDR: "namesrv1:9876;namesrv2:9876"
       JAVA_OPTS: "-Duser.home=/opt"
       JAVA_OPT_EXT: "-server -Xms256m -Xmx256m -Xmn256m"
     volumes:
@@ -62,7 +62,7 @@ services:
       - 11912:10912
     environment:
       TZ: Asia/Shanghai
-      NAMESRV_ADDR: "namesrv1:9876"
+      NAMESRV_ADDR: "namesrv1:9876;namesrv2:9876"
       JAVA_OPTS: "-Duser.home=/opt"
       JAVA_OPT_EXT: "-server -Xms256m -Xmx256m -Xmn256m"
     volumes:
@@ -86,7 +86,7 @@ services:
       - 12912:10912
     environment:
       TZ: Asia/Shanghai
-      NAMESRV_ADDR: "namesrv1:9876"
+      NAMESRV_ADDR: "namesrv1:9876;namesrv2:9876"
       JAVA_OPTS: "-Duser.home=/opt"
       JAVA_OPT_EXT: "-server -Xms256m -Xmx256m -Xmn256m"
     volumes:
@@ -110,7 +110,7 @@ services:
       - 13912:10912
     environment:
       TZ: Asia/Shanghai
-      NAMESRV_ADDR: "namesrv1:9876"
+      NAMESRV_ADDR: "namesrv1:9876;namesrv2:9876"
       JAVA_OPTS: "-Duser.home=/opt"
       JAVA_OPT_EXT: "-server -Xms256m -Xmx256m -Xmn256m"
     volumes:
@@ -128,7 +128,7 @@ services:
     ports:
       - 8090:8080
     environment:
-      JAVA_OPTS: -Drocketmq.namesrv.addr=namesrv1:9876;namesrv2:9877 -Dcom.rocketmq.sendMessageWithVIPChannel=false
+      JAVA_OPTS: -Drocketmq.namesrv.addr=namesrv1:9876;namesrv2:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false
     networks:
       rocketmq-cluster-net:
         aliases:
